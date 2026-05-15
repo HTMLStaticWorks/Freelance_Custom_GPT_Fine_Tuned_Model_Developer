@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Architecture | NeuralCore AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-theme="dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-cpu-fill me-2 text-cyan"></i>
+                <span>NEURAL<span class="text-cyan">CORE</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">AI Solutions</a>
+                        <ul class="dropdown-menu border-0 shadow-lg">
+                            <li><a class="dropdown-item" href="rag-architecture.html">RAG Architecture</a></li>
+                            <li><a class="dropdown-item" href="model-security.html">Model Security</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0" id="theme-toggle" style="color: var(--text-primary);"><i class="bi bi-moon-stars"></i></button>
+                    <button class="btn btn-link p-0 text-decoration-none fw-bold" id="rtl-toggle" style="color: var(--text-primary);">RTL</button>
+                    <a href="login.html" class="btn btn-primary btn-sm px-4">Login</a>
+                    <a href="dashboard.html" class="btn btn-outline-cyan btn-sm px-3">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-dark border-bottom border-secondary border-opacity-25">
+        <div class="container py-4 text-center">
+            <h1 class="display-3 fw-bold mb-3 animate-on-scroll">Retrieval-Augmented <span class="text-cyan">Generation</span></h1>
+            <p class="lead text-muted mx-auto animate-on-scroll" style="max-width: 700px;">Eliminating model hallucinations by grounding your enterprise AI in real-time, factual knowledge bases.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7">
+                    <img src="assets/images/rag_arch.png" alt="RAG" class="img-fluid rounded-4 shadow-2xl">
+                </div>
+                <div class="col-lg-5 ps-lg-5">
+                    <h3 class="mb-4">The Neural Context Pipeline</h3>
+                    <p class="text-muted mb-4">Our RAG systems connect large language models to your unique data sources—PDFs, databases, APIs, and real-time streams—ensuring your AI has perfect recall and factual grounding.</p>
+                    <div class="ai-card p-4">
+                        <h6 class="text-cyan mb-3">Key Components:</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-arrow-right-short text-cyan me-2"></i> Vector Embedding Generation</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short text-cyan me-2"></i> Semantic Chunking & Indexing</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-short text-cyan me-2"></i> Context Retrieval Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+                        <i class="bi bi-cpu-fill me-2 text-cyan"></i>
+                        <span>NEURAL<span class="text-cyan">CORE</span></span>
+                    </a>
+                    <p class="text-muted">Architecting the future of enterprise intelligence through custom LLMs and advanced orchestration.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom GPTs</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Fine-Tuning</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">RAG Systems</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">AI Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-muted text-decoration-none">Portfolio</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">AI Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-muted">Stay updated with the latest in AI orchestration.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 NeuralCore AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

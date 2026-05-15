@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NeuralCore AI Orchestration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-theme="dark">
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="mb-5 d-flex align-items-center">
+                <i class="bi bi-cpu-fill me-2 text-cyan fs-3"></i>
+                <span class="fw-bold fs-4">NEURAL<span class="text-cyan">CORE</span></span>
+            </div>
+            
+            <nav>
+                <a href="#" class="sidebar-link active" data-section="overview">
+                    <i class="bi bi-grid-1x2"></i> Overview
+                </a>
+                <a href="#" class="sidebar-link" data-section="corpus">
+                    <i class="bi bi-file-earmark-arrow-up"></i> Domain Corpus
+                </a>
+                <a href="#" class="sidebar-link" data-section="fine-tuning">
+                    <i class="bi bi-clock-history"></i> Fine-Tuning
+                </a>
+                <a href="#" class="sidebar-link" data-section="latency">
+                    <i class="bi bi-graph-up-arrow"></i> Inference Metrics
+                </a>
+                <a href="#" class="sidebar-link" data-section="rag">
+                    <i class="bi bi-diagram-3"></i> RAG Architecture
+                </a>
+                <a href="#" class="sidebar-link" data-section="deployment">
+                    <i class="bi bi-rocket-takeoff"></i> AI Deployment
+                </a>
+                <div class="my-4 border-top border-secondary opacity-10"></div>
+                <a href="#" class="sidebar-link" data-section="downloads">
+                    <i class="bi bi-download"></i> Downloads
+                </a>
+                <a href="#" class="sidebar-link" data-section="messages">
+                    <i class="bi bi-chat-dots"></i> Messages <span class="badge bg-danger ms-auto rounded-pill">3</span>
+                </a>
+                <a href="#" class="sidebar-link" data-section="settings">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </nav>
+
+            <div class="mt-auto pt-5">
+                <div class="bg-dark p-3 rounded-3 border border-secondary border-opacity-25">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="bg-cyan rounded-circle p-1 me-2" style="width: 10px; height: 10px;"></div>
+                        <span class="small text-muted">Pro Plan</span>
+                    </div>
+                    <p class="small text-muted mb-3">Model limit: 80% used</p>
+                    <div class="progress bg-secondary" style="height: 6px;">
+                        <div class="progress-bar bg-cyan" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-dark d-lg-none me-3" id="sidebar-toggle"><i class="bi bi-list"></i></button>
+                    <h2 class="h4 mb-0 fw-bold">Enterprise Intelligence Dashboard</h2>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary btn-sm" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                            <img src="https://ui-avatars.com/api/?name=Admin&background=06b6d4&color=fff" alt="User" class="rounded-circle me-2" width="32">
+                            <span class="d-none d-md-block">Admin Account</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-secondary bg-dark text-white shadow">
+                            <li><a class="dropdown-item text-white" href="#">Profile</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Billing</a></li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li><a class="dropdown-item text-danger" href="index.html">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Sections -->
+            
+            <!-- 1. Overview -->
+            <div id="overview" class="dashboard-section">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-value">98.4%</div>
+                            <div class="metric-label">Model Accuracy</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-value" id="latency-val">42ms</div>
+                            <div class="metric-label">Avg. Latency</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-value">1.2M</div>
+                            <div class="metric-label">Tokens / Hour</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-value text-success">$0.002</div>
+                            <div class="metric-label">Cost per 1k Tokens</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="ai-card">
+                            <h5 class="mb-4">Training Activity Timeline</h5>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-muted small">
+                                            <th>Model Name</th>
+                                            <th>Status</th>
+                                            <th>Epochs</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GPT-4-Enterprise-v2</td>
+                                            <td><span class="badge bg-success-subtle text-success">Deployed</span></td>
+                                            <td>25/25</td>
+                                            <td>Oct 24, 2026</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Llama-3-Sales-Agent</td>
+                                            <td><span class="badge bg-warning-subtle text-warning">Fine-tuning</span></td>
+                                            <td>12/20</td>
+                                            <td>Oct 25, 2026</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ai-card">
+                            <h5 class="mb-4">Notifications</h5>
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="bg-cyan bg-opacity-10 p-2 rounded text-cyan h-100"><i class="bi bi-info-circle"></i></div>
+                                <div>
+                                    <p class="small mb-1">New dataset uploaded successfully.</p>
+                                    <span class="text-muted smaller">2 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <div class="bg-danger bg-opacity-10 p-2 rounded text-danger h-100"><i class="bi bi-exclamation-triangle"></i></div>
+                                <div>
+                                    <p class="small mb-1">Inference latency spike detected.</p>
+                                    <span class="text-muted smaller">15 mins ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Domain Corpus Upload -->
+            <div id="corpus" class="dashboard-section" style="display: none;">
+                <div class="ai-card text-center py-5 mb-4 border-dashed">
+                    <i class="bi bi-cloud-arrow-up display-4 text-cyan mb-3"></i>
+                    <h4>Upload Your Knowledge Base</h4>
+                    <p class="text-muted">Drag and drop CSV, PDF, or JSON files to train your model.</p>
+                    <button class="btn btn-primary mt-3">Select Files</button>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="ai-card p-3 d-flex align-items-center">
+                            <i class="bi bi-file-earmark-pdf fs-3 text-danger me-3"></i>
+                            <div>
+                                <h6 class="mb-0">Product_Catalog.pdf</h6>
+                                <span class="small text-muted">2.4 MB</span>
+                            </div>
+                            <button class="btn btn-link ms-auto text-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Fine-Tuning -->
+            <div id="fine-tuning" class="dashboard-section" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="ai-card">
+                            <h5>Training Progress</h5>
+                            <div class="my-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Epoch 12 / 20</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress bg-secondary" style="height: 10px;">
+                                    <div class="progress-bar bg-cyan progress-bar-striped progress-bar-animated" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <p class="small text-muted mb-1">Loss Value</p>
+                                    <h6>0.1423</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="small text-muted mb-1">Learning Rate</p>
+                                    <h6>5e-5</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Latency -->
+            <div id="latency" class="dashboard-section" style="display: none;">
+                <div class="ai-card">
+                    <h5>Real-Time Response Metrics</h5>
+                    <div class="mt-5" style="height: 200px; display: flex; align-items: flex-end; gap: 5px;">
+                        <!-- Simulated bar chart -->
+                        <div class="bg-cyan flex-fill" style="height: 40%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 60%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 35%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 80%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 55%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 70%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 90%;"></div>
+                        <div class="bg-cyan flex-fill" style="height: 45%;"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3 text-muted small">
+                        <span>10:00 AM</span>
+                        <span>10:30 AM</span>
+                        <span>11:00 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. RAG Architecture -->
+            <div id="rag" class="dashboard-section" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <img src="assets/images/rag_arch.png" alt="RAG" class="img-fluid rounded-4 border border-secondary border-opacity-25">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ai-card h-100">
+                            <h5>Retrieval Config</h5>
+                            <div class="mb-4 mt-3">
+                                <label class="form-label small text-muted">Vector Database Provider</label>
+                                <select class="form-select bg-dark border-secondary text-white">
+                                    <option>Pinecone (Serverless)</option>
+                                    <option>Milvus</option>
+                                    <option>Weaviate</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">Chunk Size</label>
+                                <input type="range" class="form-range" min="256" max="2048" step="128">
+                                <div class="d-flex justify-content-between small text-muted">
+                                    <span>256</span>
+                                    <span>2048</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">Re-index Pipeline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Deployment -->
+            <div id="deployment" class="dashboard-section" style="display: none;">
+                <div class="ai-card mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="mb-0">Active API Keys</h5>
+                        <button class="btn btn-outline-cyan btn-sm">+ Create New Key</button>
+                    </div>
+                    <div class="bg-dark p-3 rounded-3 border border-secondary mb-3 d-flex justify-content-between align-items-center">
+                        <code class="text-cyan">sk_live_...4a8d</code>
+                        <div>
+                            <button class="btn btn-link btn-sm text-muted"><i class="bi bi-copy"></i></button>
+                            <button class="btn btn-link btn-sm text-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Downloads -->
+            <div id="downloads" class="dashboard-section" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="ai-card text-center">
+                            <i class="bi bi-file-earmark-zip fs-2 text-cyan mb-3"></i>
+                            <h6>Model-Weights-v2.zip</h6>
+                            <p class="small text-muted">4.2 GB</p>
+                            <button class="btn btn-outline-cyan btn-sm w-100">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Messages -->
+            <div id="messages" class="dashboard-section" style="display: none;">
+                <div class="ai-card p-0">
+                    <div class="row g-0">
+                        <div class="col-md-4 border-end border-secondary border-opacity-10">
+                            <div class="p-3 border-bottom border-secondary border-opacity-10 bg-secondary bg-opacity-25">
+                                <h6 class="mb-0">Recent Chats</h6>
+                            </div>
+                            <div class="list-group list-group-flush bg-transparent">
+                                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-secondary border-opacity-10 p-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-cyan rounded-circle me-3" style="width: 40px; height: 40px;"></div>
+                                        <div>
+                                            <h6 class="mb-0">Client A</h6>
+                                            <p class="small text-muted mb-0">Model optimization query</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="p-5 text-center text-muted">
+                                <i class="bi bi-chat-dots fs-1 mb-3"></i>
+                                <p>Select a conversation to start messaging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Settings -->
+            <div id="settings" class="dashboard-section" style="display: none;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ai-card">
+                            <h5 class="mb-4">General Settings</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Default Model</label>
+                                <select class="form-select bg-dark border-secondary text-white">
+                                    <option>GPT-4o (OpenAI)</option>
+                                    <option>Llama 3.1 (Meta)</option>
+                                    <option>Claude 3.5 (Anthropic)</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label">Automatic Training Logs</label>
+                            </div>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
