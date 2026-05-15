@@ -1,0 +1,8 @@
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+    --primary-bg: #0d1117;
+    --secondary-bg: #161b22;
+    --card-bg: #1f2937;
+    --text-primary: #f9fafb;
+    --text-muted: #cbd5e1;
+}

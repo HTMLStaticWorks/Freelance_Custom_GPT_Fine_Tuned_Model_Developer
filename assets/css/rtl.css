@@ -1,0 +1,24 @@
+/* RTL Specific Styles */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-3 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .sidebar {
+    right: 0;
+    left: auto;
+}
+
+[dir="rtl"] .main-content {
+    margin-right: 280px;
+    margin-left: 0;
+}
