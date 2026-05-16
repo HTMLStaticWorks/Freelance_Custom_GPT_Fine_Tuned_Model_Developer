@@ -195,8 +195,8 @@
                     <div class="col-lg-4">
                         <div class="ai-card h-100">
                             <h5 class="mb-4">System Notifications</h5>
-                            <div class="d-flex gap-3 mb-4">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(6, 182, 212, 0.15); color: #06b6d4; flex-shrink: 0;">
+                            <div class="d-flex gap-3 mb-4 notification-item">
+                                <div class="notification-icon-box rounded-3" style="width: 42px; height: 42px; background: rgba(6, 182, 212, 0.15); color: #06b6d4; flex-shrink: 0;">
                                     <i class="bi bi-cloud-arrow-up fs-5"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -204,8 +204,8 @@
                                     <span class="text-muted smaller">2 mins ago</span>
                                 </div>
                             </div>
-                            <div class="d-flex gap-3 mb-4">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(239, 68, 68, 0.15); color: #ef4444; flex-shrink: 0;">
+                            <div class="d-flex gap-3 mb-4 notification-item">
+                                <div class="notification-icon-box rounded-3" style="width: 42px; height: 42px; background: rgba(239, 68, 68, 0.15); color: #ef4444; flex-shrink: 0;">
                                     <i class="bi bi-exclamation-triangle fs-5"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -213,8 +213,8 @@
                                     <span class="text-muted smaller">15 mins ago</span>
                                 </div>
                             </div>
-                            <div class="d-flex gap-3">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(34, 197, 94, 0.15); color: #22c55e; flex-shrink: 0;">
+                            <div class="d-flex gap-3 notification-item">
+                                <div class="notification-icon-box rounded-3" style="width: 42px; height: 42px; background: rgba(34, 197, 94, 0.15); color: #22c55e; flex-shrink: 0;">
                                     <i class="bi bi-check-circle fs-5"></i>
                                 </div>
                                 <div class="flex-grow-1">
@@ -632,42 +632,42 @@
             <!-- 7. Downloads -->
             <div id="downloads" class="dashboard-section" style="display: none;">
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="ai-card h-100 text-center">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="ai-card h-100 text-center d-flex flex-column">
                             <i class="bi bi-file-earmark-zip fs-1 text-cyan mb-3"></i>
-                            <h5>Model-Weights-v2.zip</h5>
+                            <h5 style="word-break: break-word;">Model-Weights-v2.zip</h5>
                             <p class="small text-muted mb-4">Complete GGUF export for local edge deployment.</p>
-                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 4.2 GB • SHA256 Verified</div>
-                            <button class="btn btn-primary w-100">Download Weights</button>
+                            <div class="bg-theme-primary p-2 rounded smaller text-muted mb-4">Size: 4.2 GB • SHA256 Verified</div>
+                            <button class="btn btn-primary w-100 mt-auto py-3">Download Weights</button>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="ai-card h-100 text-center">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="ai-card h-100 text-center d-flex flex-column">
                             <i class="bi bi-file-earmark-bar-graph fs-1 text-success mb-3"></i>
-                            <h5>Training_Log_Q4.csv</h5>
+                            <h5 style="word-break: break-word;">Training_Log_Q4.csv</h5>
                             <p class="small text-muted mb-4">Detailed loss metrics and hyperparameter logs.</p>
-                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 124 KB • Generated Oct 24</div>
-                            <button class="btn btn-outline-cyan w-100">Export CSV</button>
+                            <div class="bg-theme-primary p-2 rounded smaller text-muted mb-4">Size: 124 KB • Generated Oct 24</div>
+                            <button class="btn btn-outline-cyan w-100 mt-auto py-3">Export CSV</button>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="ai-card h-100 text-center">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="ai-card h-100 text-center d-flex flex-column">
                             <i class="bi bi-shield-lock-fill fs-1 text-warning mb-3"></i>
-                            <h5>Compliance_Report.pdf</h5>
+                            <h5 style="word-break: break-word;">Compliance_Report.pdf</h5>
                             <p class="small text-muted mb-4">Official SOC2 Type II compliance audit result.</p>
-                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 1.8 MB • Enterprise Only</div>
-                            <button class="btn btn-outline-cyan w-100">Request Access</button>
+                            <div class="bg-theme-primary p-2 rounded smaller text-muted mb-4">Size: 1.8 MB • Enterprise Only</div>
+                            <button class="btn btn-outline-cyan w-100 mt-auto py-3">Request Access</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 8. Messages -->
-            <div id="messages" class="dashboard-section" style="display: none; height: 650px;">
-                <div class="ai-card p-0 h-100 overflow-hidden d-flex flex-column">
-                    <div class="row g-0 h-100 flex-grow-1">
+            <div id="messages" class="dashboard-section" style="display: none;">
+                <div class="ai-card p-0 overflow-hidden d-flex flex-column messages-container">
+                    <div class="row g-0 flex-grow-1">
                         <!-- Sidebar -->
-                        <div class="col-md-4 border-end border-secondary border-opacity-10 d-flex flex-column h-100">
+                        <div class="col-md-4 border-end border-secondary border-opacity-10 d-flex flex-column">
                             <div class="p-4 border-bottom border-secondary border-opacity-10 bg-secondary bg-opacity-10">
                                 <h6 class="mb-0">Recent Conversations</h6>
                             </div>
@@ -700,18 +700,17 @@
                                 <h6 class="mb-0">System Architect</h6>
                                 <span class="badge bg-success ms-2 p-1 rounded-circle" style="width: 8px; height: 8px;"></span>
                                 <div class="ms-auto d-flex gap-2">
-                                    <button class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-telephone"></i></button>
                                     <button class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-three-dots-vertical"></i></button>
                                 </div>
                             </div>
-                            <div class="p-5 flex-grow-1 overflow-auto">
-                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4" style="max-width: 80% ;">
+                            <div class="p-lg-5 p-3 flex-grow-1 overflow-auto chat-area">
+                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4 mobile-bubble">
                                     <p class="small mb-0">Hello Admin, the Llama-3-Sales-Agent fine-tuning is showing promising results at Epoch 12. Should we proceed with the current learning rate?</p>
                                 </div>
-                                <div class="bg-cyan bg-opacity-10 p-3 rounded-4 mb-4 ms-auto" style="max-width: 80% ;">
+                                <div class="bg-cyan bg-opacity-10 p-3 rounded-4 mb-4 ms-auto mobile-bubble">
                                     <p class="small mb-0">Yes, keep it at 5e-5. We need to prioritize stability over speed for this deployment.</p>
                                 </div>
-                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4" style="max-width: 80% ;">
+                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4 mobile-bubble">
                                     <p class="small mb-0">Understood. I will also monitor the gradient clipping to ensure no sudden spikes in the next epoch.</p>
                                 </div>
                             </div>

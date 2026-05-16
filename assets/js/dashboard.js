@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // If mobile, close sidebar
-            if (window.innerWidth < 992) {
+            // If mobile or tablet (up to 1024px), close sidebar after click
+            if (window.innerWidth <= 1024) {
                 document.querySelector('.sidebar').classList.remove('active');
             }
         });
