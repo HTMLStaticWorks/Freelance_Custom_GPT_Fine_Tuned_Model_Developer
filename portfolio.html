@@ -9,7 +9,7 @@
 </head>
 <body data-theme="dark">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i class="bi bi-cpu-fill me-2 text-cyan"></i>
@@ -45,7 +45,7 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="py-5 bg-dark border-bottom border-secondary border-opacity-25">
+    <section class="py-5 bg-theme-secondary border-bottom border-secondary border-opacity-25">
         <div class="container py-4 text-center">
             <h1 class="display-3 fw-bold mb-3 animate-on-scroll">AI Case <span class="text-cyan">Studies</span></h1>
             <p class="lead text-muted mx-auto animate-on-scroll" style="max-width: 700px;">Explore our portfolio of deep neural integrations and specialized LLM orchestrations across diverse industries.</p>
@@ -58,20 +58,20 @@
                 <div class="col-md-6">
                     <div class="ai-card p-0 overflow-hidden">
                         <img src="assets/images/dashboard_preview.png" alt="Project" class="img-fluid">
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h4>LegalDoc Intelligence</h4>
                             <p class="text-muted">A fine-tuned Llama 3 model for automated legal document analysis and risk assessment.</p>
-                            <a href="portfolio-details.html" class="btn btn-outline-cyan btn-sm">View Case Study</a>
+                            <a href="portfolio-details.html" class="btn btn-outline-cyan btn-sm mt-auto w-fit-content">View Case Study</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="ai-card p-0 overflow-hidden">
                         <img src="assets/images/hero_ai.png" alt="Project" class="img-fluid">
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <h4>HealthStream RAG</h4>
                             <p class="text-muted">Real-time medical knowledge retrieval system for diagnostic assistance.</p>
-                            <a href="portfolio-details.html" class="btn btn-outline-cyan btn-sm">View Case Study</a>
+                            <a href="portfolio-details.html" class="btn btn-outline-cyan btn-sm mt-auto w-fit-content">View Case Study</a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,203 @@
         </div>
     </section>
 
-    <footer class="py-5"><div class="container text-center text-muted small"><p>&copy; 2026 NeuralCore AI</p></div></footer>
+    </section>
+
+    <!-- 1. Featured Project: Agentic Swarms (UNIQUE SECTION) -->
+    <section class="py-5 bg-theme-secondary">
+        <div class="container py-5">
+            <div class="ai-card p-0 overflow-hidden shimmer-border animate-on-scroll">
+                <div class="row g-0">
+                    <div class="col-lg-7">
+                        <img src="assets/images/agent_orchestration.png" alt="Agents" class="img-fluid h-100 object-fit-cover">
+                    </div>
+                    <div class="col-lg-5 p-lg-5 p-4 d-flex flex-column justify-content-center">
+                        <span class="badge bg-cyan text-dark mb-3 w-fit-content">FEATURED CASE STUDY</span>
+                        <h2 class="display-6 fw-bold mb-4">FinTech <span class="text-cyan">Agentic Swarms</span></h2>
+                        <p class="text-muted mb-4">Deployed a cluster of 50+ specialized AI agents for a Tier-1 investment bank, automating 85% of complex trade reconciliation and risk reporting.</p>
+                        <div class="row g-3 mb-5">
+                            <div class="col-6">
+                                <h3 class="mb-0">85%</h3>
+                                <p class="small text-muted mb-0">Efficiency Gain</p>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="mb-0">< 2s</h3>
+                                <p class="small text-muted mb-0">Decision Latency</p>
+                            </div>
+                        </div>
+                        <a href="portfolio-details.html" class="btn btn-primary w-fit-content">Explore Architecture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Featured Project: Neural Memory (UNIQUE SECTION) -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="position-relative p-4 border border-cyan border-opacity-20 rounded-5">
+                        <img src="assets/images/context_management.png" alt="Memory" class="img-fluid rounded-4 shadow-lg">
+                        <div class="position-absolute top-0 end-0 m-2">
+                            <div class="bg-theme-secondary p-3 rounded-4 border border-secondary shadow">
+                                <h6 class="mb-1 text-cyan">Context Size</h6>
+                                <h4 class="mb-0">2M+ Tokens</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-4">The Neural <span class="text-cyan">Memory Matrix</span></h2>
+                    <p class="text-muted mb-4">Architecting a long-term enterprise context system for a global pharma company, enabling the AI to "remember" 10 years of R&D data during live drug discovery sessions.</p>
+                    <div class="ai-card bg-theme-primary p-4 border-0">
+                        <div class="d-flex gap-3 mb-4">
+                            <i class="bi bi-cpu text-cyan fs-4"></i>
+                            <div>
+                                <h6 class="">Vector Compression</h6>
+                                <p class="small text-muted mb-0">Proprietary algorithms for ultra-high density context retrieval.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <i class="bi bi-hdd-network text-cyan fs-4"></i>
+                            <div>
+                                <h6 class="">Persistent State</h6>
+                                <p class="small text-muted mb-0">Immutable memory logs across session boundaries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Featured Project: Global Edge (UNIQUE SECTION) -->
+    <section class="py-5 bg-theme-secondary">
+        <div class="container py-5">
+            <div class="row g-4 animate-on-scroll">
+                <div class="col-lg-8">
+                    <div class="ai-card h-100 p-0 overflow-hidden position-relative">
+                        <img src="assets/images/global_network.png" alt="Network" class="img-fluid w-100 h-100 object-fit-cover opacity-50">
+                        <div class="position-absolute bottom-0 start-0 p-lg-5 p-4 w-100 bg-gradient-to-t portfolio-hero-content">
+                            <h2 class="display-5 fw-bold mb-3">Global <span class="text-cyan">Edge Sync</span></h2>
+                            <p class="mb-0" style="max-width: 600px;">Synchronizing model weights across 120+ edge locations for a global media group, reducing inference latency by 90% for 200M monthly users.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ai-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="mb-4">Infrastructure Health</h4>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <label class="small text-muted">Global Latency Reduction</label>
+                                    <span class="small text-cyan">90%</span>
+                                </div>
+                                <div class="progress bg-theme-primary" style="height: 6px;">
+                                    <div class="progress-bar bg-cyan" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <label class="small text-muted">User Satisfaction</label>
+                                    <span class="small text-cyan">95%</span>
+                                </div>
+                                <div class="progress bg-theme-primary" style="height: 6px;">
+                                    <div class="progress-bar bg-cyan" style="width: 95%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-6">
+                                    <div class="p-2 bg-theme-primary rounded-3 text-center">
+                                        <i class="bi bi-hdd-stack text-cyan mb-1"></i>
+                                        <h6 class="mb-0 small">128</h6>
+                                        <span class="text-muted" style="font-size: 10px;">Nodes</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 bg-theme-primary rounded-3 text-center">
+                                        <i class="bi bi-shield-check text-cyan mb-1"></i>
+                                        <h6 class="mb-0 small">99.99%</h6>
+                                        <span class="text-muted" style="font-size: 10px;">Uptime</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3 bg-theme-secondary rounded-4 border border-secondary border-opacity-25">
+                                <h6 class="small text-muted mb-3 fw-bold text-uppercase">Live Sync Log</h6>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-success rounded-circle me-2" style="width: 6px; height: 6px;"></div>
+                                    <span class="text-muted" style="font-size: 11px;">Tokyo Cluster Synchronized [0.2ms]</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-success rounded-circle me-2" style="width: 6px; height: 6px;"></div>
+                                    <span class="text-muted" style="font-size: 11px;">London Weight Update Complete</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-success rounded-circle me-2" style="width: 6px; height: 6px;"></div>
+                                    <span class="text-muted" style="font-size: 11px;">New York Index Rebuilt</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="portfolio-details.html" class="btn btn-outline-cyan w-100 mt-4">View Full Infrastructure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+                        <i class="bi bi-cpu-fill me-2 text-cyan"></i>
+                        <span>NEURAL<span class="text-cyan">CORE</span></span>
+                    </a>
+                    <p class="text-muted">Architecting the future of enterprise intelligence through custom LLMs and advanced orchestration.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom GPTs</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Fine-Tuning</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">RAG Systems</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">AI Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-muted text-decoration-none">Portfolio</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">AI Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-muted">Stay updated with the latest in AI orchestration.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-theme-primary border-secondary" placeholder="Email address">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 NeuralCore AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

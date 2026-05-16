@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | NeuralCore AI Orchestration</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,9 +15,14 @@
     <div class="dashboard-container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="mb-5 d-flex align-items-center">
-                <i class="bi bi-cpu-fill me-2 text-cyan fs-3"></i>
-                <span class="fw-bold fs-4">NEURAL<span class="text-cyan">CORE</span></span>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none" style="color: var(--text-primary);">
+                    <i class="bi bi-cpu-fill me-2 text-cyan fs-3"></i>
+                    <span class="fw-bold fs-4">NEURAL<span class="text-cyan">CORE</span></span>
+                </a>
+                <button class="btn btn-link d-lg-none p-0" id="sidebar-close" style="color: var(--text-primary);">
+                    <i class="bi bi-x-lg fs-4"></i>
+                </button>
             </div>
             
             <nav>
@@ -38,7 +44,7 @@
                 <a href="#" class="sidebar-link" data-section="deployment">
                     <i class="bi bi-rocket-takeoff"></i> AI Deployment
                 </a>
-                <div class="my-4 border-top border-secondary opacity-10"></div>
+                <div class="my-2 border-top border-secondary opacity-10"></div>
                 <a href="#" class="sidebar-link" data-section="downloads">
                     <i class="bi bi-download"></i> Downloads
                 </a>
@@ -50,9 +56,9 @@
                 </a>
             </nav>
 
-            <div class="mt-auto pt-5">
-                <div class="bg-dark p-3 rounded-3 border border-secondary border-opacity-25">
-                    <div class="d-flex align-items-center mb-2">
+            <div class="mt-auto pt-2">
+                <div class="bg-theme-primary p-3 rounded-3 border border-secondary border-opacity-25 mb-2">
+                    <div class="d-flex align-items-center mb-1">
                         <div class="bg-cyan rounded-circle p-1 me-2" style="width: 10px; height: 10px;"></div>
                         <span class="small text-muted">Pro Plan</span>
                     </div>
@@ -61,37 +67,63 @@
                         <div class="progress-bar bg-cyan" style="width: 80%;"></div>
                     </div>
                 </div>
+                <a href="index.html" class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2 border-opacity-25">
+                    <i class="bi bi-box-arrow-right"></i> Logout Session
+                </a>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="d-flex justify-content-between align-items-center mb-5">
+            <header class="dashboard-header d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-dark d-lg-none me-3" id="sidebar-toggle"><i class="bi bi-list"></i></button>
-                    <h2 class="h4 mb-0 fw-bold">Enterprise Intelligence Dashboard</h2>
+                    <button class="btn btn-dark d-xl-none me-2" id="sidebar-toggle"><i class="bi bi-list"></i></button>
+                    <div class="d-xl-none me-3">
+                        <i class="bi bi-cpu-fill text-cyan fs-4"></i>
+                    </div>
+                    <h2 class="h4 mb-0 fw-bold">Dashboard</h2>
                 </div>
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2 gap-md-3">
+                    <button class="btn btn-link p-0 text-decoration-none fw-bold" id="rtl-toggle" style="color: var(--text-primary); font-size: 0.9rem;">RTL</button>
                     <button class="btn btn-outline-secondary btn-sm" id="theme-toggle"><i class="bi bi-moon-stars"></i></button>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
-                            <img src="https://ui-avatars.com/api/?name=Admin&background=06b6d4&color=fff" alt="User" class="rounded-circle me-2" width="32">
-                            <span class="d-none d-md-block">Admin Account</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end border-secondary bg-dark text-white shadow">
-                            <li><a class="dropdown-item text-white" href="#">Profile</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Billing</a></li>
-                            <li><hr class="dropdown-divider border-secondary"></li>
-                            <li><a class="dropdown-item text-danger" href="index.html">Sign Out</a></li>
-                        </ul>
+                    <div class="profile-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=06b6d4&color=fff" alt="User" class="rounded-circle" width="35">
                     </div>
                 </div>
             </header>
+
+            <!-- Mobile Bottom Nav -->
+            <div class="mobile-bottom-nav d-xl-none">
+                <div class="d-flex justify-content-around align-items-center h-100">
+                    <a href="#" class="mobile-nav-link active" data-section="overview">
+                        <i class="bi bi-grid-1x2"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link" data-section="deployment">
+                        <i class="bi bi-rocket-takeoff"></i>
+                        <span>Deploy</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link" data-section="messages">
+                        <i class="bi bi-chat-dots position-relative">
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle" style="font-size: 0.5rem;"></span>
+                        </i>
+                        <span>Chat</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link" data-section="settings">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
+            </div>
 
             <!-- Sections -->
             
             <!-- 1. Overview -->
             <div id="overview" class="dashboard-section">
+                <div class="mb-4 animate-on-scroll">
+                    <h3 class="fw-bold mb-1">Welcome back, Admin</h3>
+                    <p class="text-muted small">Monitor your neural orchestration and model performance in real-time.</p>
+                </div>
                 <div class="row g-4 mb-5">
                     <div class="col-md-3">
                         <div class="metric-card">
@@ -122,9 +154,12 @@
                 <div class="row g-4">
                     <div class="col-lg-8">
                         <div class="ai-card">
-                            <h5 class="mb-4">Training Activity Timeline</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="mb-0">Training Activity Timeline</h5>
+                                <button class="btn btn-outline-cyan btn-sm">Full Report</button>
+                            </div>
                             <div class="table-responsive">
-                                <table class="table table-dark table-hover mb-0">
+                                <table class="table table-hover mb-0">
                                     <thead>
                                         <tr class="text-muted small">
                                             <th>Model Name</th>
@@ -146,26 +181,45 @@
                                             <td>12/20</td>
                                             <td>Oct 25, 2026</td>
                                         </tr>
+                                        <tr>
+                                            <td>Mistral-Large-v3-Core</td>
+                                            <td><span class="badge bg-info-subtle text-info">In Queue</span></td>
+                                            <td>0/50</td>
+                                            <td>Oct 26, 2026</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="ai-card">
-                            <h5 class="mb-4">Notifications</h5>
+                        <div class="ai-card h-100">
+                            <h5 class="mb-4">System Notifications</h5>
                             <div class="d-flex gap-3 mb-4">
-                                <div class="bg-cyan bg-opacity-10 p-2 rounded text-cyan h-100"><i class="bi bi-info-circle"></i></div>
-                                <div>
-                                    <p class="small mb-1">New dataset uploaded successfully.</p>
+                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(6, 182, 212, 0.15); color: #06b6d4; flex-shrink: 0;">
+                                    <i class="bi bi-cloud-arrow-up fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1 fw-medium">New dataset uploaded successfully.</p>
                                     <span class="text-muted smaller">2 mins ago</span>
                                 </div>
                             </div>
-                            <div class="d-flex gap-3">
-                                <div class="bg-danger bg-opacity-10 p-2 rounded text-danger h-100"><i class="bi bi-exclamation-triangle"></i></div>
-                                <div>
-                                    <p class="small mb-1">Inference latency spike detected.</p>
+                            <div class="d-flex gap-3 mb-4">
+                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(239, 68, 68, 0.15); color: #ef4444; flex-shrink: 0;">
+                                    <i class="bi bi-exclamation-triangle fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1 fw-medium">Inference latency spike detected.</p>
                                     <span class="text-muted smaller">15 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <div class="rounded-3 d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background: rgba(34, 197, 94, 0.15); color: #22c55e; flex-shrink: 0;">
+                                    <i class="bi bi-check-circle fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1 fw-medium">Monthly billing report generated.</p>
+                                    <span class="text-muted smaller">1 hour ago</span>
                                 </div>
                             </div>
                         </div>
@@ -175,19 +229,43 @@
 
             <!-- 2. Domain Corpus Upload -->
             <div id="corpus" class="dashboard-section" style="display: none;">
-                <div class="ai-card text-center py-5 mb-4 border-dashed">
+                <div class="ai-card text-center py-5 mb-5 border-dashed">
                     <i class="bi bi-cloud-arrow-up display-4 text-cyan mb-3"></i>
                     <h4>Upload Your Knowledge Base</h4>
                     <p class="text-muted">Drag and drop CSV, PDF, or JSON files to train your model.</p>
-                    <button class="btn btn-primary mt-3">Select Files</button>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button class="btn btn-primary">Select Files</button>
+                        <button class="btn btn-outline-secondary">Import from AWS S3</button>
+                    </div>
                 </div>
+                <h5 class="mb-4">Recent Uploads</h5>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="ai-card p-3 d-flex align-items-center">
                             <i class="bi bi-file-earmark-pdf fs-3 text-danger me-3"></i>
                             <div>
                                 <h6 class="mb-0">Product_Catalog.pdf</h6>
-                                <span class="small text-muted">2.4 MB</span>
+                                <span class="small text-muted">2.4 MB • Oct 12</span>
+                            </div>
+                            <button class="btn btn-link ms-auto text-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ai-card p-3 d-flex align-items-center">
+                            <i class="bi bi-file-earmark-spreadsheet fs-3 text-success me-3"></i>
+                            <div>
+                                <h6 class="mb-0">Client_Feedback_v2.csv</h6>
+                                <span class="small text-muted">1.1 MB • Oct 15</span>
+                            </div>
+                            <button class="btn btn-link ms-auto text-danger"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ai-card p-3 d-flex align-items-center">
+                            <i class="bi bi-file-earmark-code fs-3 text-warning me-3"></i>
+                            <div>
+                                <h6 class="mb-0">Vector_Mappings.json</h6>
+                                <span class="small text-muted">0.8 MB • Oct 20</span>
                             </div>
                             <button class="btn btn-link ms-auto text-danger"><i class="bi bi-trash"></i></button>
                         </div>
@@ -198,28 +276,73 @@
             <!-- 3. Fine-Tuning -->
             <div id="fine-tuning" class="dashboard-section" style="display: none;">
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="ai-card">
-                            <h5>Training Progress</h5>
+                    <div class="col-lg-6">
+                        <div class="ai-card h-100">
+                            <h5>Active Training Progress</h5>
+                            <div class="my-5 text-center">
+                                <div class="display-6 fw-bold text-cyan mb-2">60.2%</div>
+                                <span class="text-muted small">Estimated Time Remaining: 12m 45s</span>
+                            </div>
                             <div class="my-4">
-                                <div class="d-flex justify-content-between mb-2">
+                                <div class="d-flex justify-content-between mb-2 small text-muted">
                                     <span>Epoch 12 / 20</span>
-                                    <span>60%</span>
+                                    <span>60% Complete</span>
                                 </div>
                                 <div class="progress bg-secondary" style="height: 10px;">
                                     <div class="progress-bar bg-cyan progress-bar-striped progress-bar-animated" style="width: 60%;"></div>
                                 </div>
                             </div>
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <p class="small text-muted mb-1">Loss Value</p>
-                                    <h6>0.1423</h6>
+                            <div class="row g-3 mt-4">
+                                <div class="col-6 col-md-3">
+                                    <p class="small text-muted mb-1">Loss</p>
+                                    <h6 class="mb-0">0.1423</h6>
                                 </div>
-                                <div class="col-6">
-                                    <p class="small text-muted mb-1">Learning Rate</p>
-                                    <h6>5e-5</h6>
+                                <div class="col-6 col-md-3">
+                                    <p class="small text-muted mb-1">LR</p>
+                                    <h6 class="mb-0">5e-5</h6>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="small text-muted mb-1">Batches</p>
+                                    <h6 class="mb-0">1.2k</h6>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="small text-muted mb-1">GPU Util</p>
+                                    <h6 class="mb-0 text-success">92%</h6>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ai-card h-100">
+                            <h5 class="mb-4">Hyperparameter Configuration</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted">Base Model</label>
+                                    <select class="form-select bg-dark border-secondary text-white">
+                                        <option>Llama-3-8B-Instruct</option>
+                                        <option>GPT-3.5-Turbo-FT</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted">Context Window</label>
+                                    <select class="form-select bg-dark border-secondary text-white">
+                                        <option>4k Tokens</option>
+                                        <option>8k Tokens</option>
+                                        <option>16k Tokens</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" checked>
+                                        <label class="form-check-label small">LoRA Adaptation</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label small">Quantized Training (4-bit)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-danger w-100 mt-auto">Abort Training Process</button>
                         </div>
                     </div>
                 </div>
@@ -227,53 +350,187 @@
 
             <!-- 4. Latency -->
             <div id="latency" class="dashboard-section" style="display: none;">
-                <div class="ai-card">
-                    <h5>Real-Time Response Metrics</h5>
-                    <div class="mt-5" style="height: 200px; display: flex; align-items: flex-end; gap: 5px;">
-                        <!-- Simulated bar chart -->
-                        <div class="bg-cyan flex-fill" style="height: 40%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 60%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 35%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 80%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 55%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 70%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 90%;"></div>
-                        <div class="bg-cyan flex-fill" style="height: 45%;"></div>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="ai-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5>Inference Performance (24h)</h5>
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-outline-secondary active">1h</button>
+                                    <button class="btn btn-outline-secondary">6h</button>
+                                    <button class="btn btn-outline-secondary">24h</button>
+                                </div>
+                            </div>
+                            <div class="mt-5" style="height: 250px; display: flex; align-items: flex-end; gap: 8px;">
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 40%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 60%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 35%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 80%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 55%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 70%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 90%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 45%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 65%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 30%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 85%; opacity: 0.6;"></div>
+                                <div class="bg-cyan flex-fill rounded-top" style="height: 50%; opacity: 0.6;"></div>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3 text-muted smaller text-uppercase fw-bold">
+                                <span>08:00 AM</span>
+                                <span>12:00 PM</span>
+                                <span>04:00 PM</span>
+                                <span>08:00 PM</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between mt-3 text-muted small">
-                        <span>10:00 AM</span>
-                        <span>10:30 AM</span>
-                        <span>11:00 AM</span>
+                    <div class="col-lg-4">
+                        <div class="ai-card h-100">
+                            <h5 class="mb-4">Latency Breakdown</h5>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1 small">
+                                    <span>Token Generation</span>
+                                    <span class="text-cyan">28ms</span>
+                                </div>
+                                <div class="progress bg-secondary" style="height: 4px;">
+                                    <div class="progress-bar bg-cyan" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1 small">
+                                    <span>Vector Search</span>
+                                    <span class="text-cyan">8ms</span>
+                                </div>
+                                <div class="progress bg-secondary" style="height: 4px;">
+                                    <div class="progress-bar bg-cyan" style="width: 20%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1 small">
+                                    <span>Pre-processing</span>
+                                    <span class="text-cyan">6ms</span>
+                                </div>
+                                <div class="progress bg-secondary" style="height: 4px;">
+                                    <div class="progress-bar bg-cyan" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <div class="bg-theme-primary p-3 rounded-4 mt-5">
+                                <p class="smaller text-muted mb-0">99th Percentile: <span class="text-theme-primary">142ms</span></p>
+                                <p class="smaller text-muted mb-0">Total Success Rate: <span class="text-success">99.98%</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- 5. RAG Architecture -->
             <div id="rag" class="dashboard-section" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <img src="assets/images/rag_arch.png" alt="RAG" class="img-fluid rounded-4 border border-secondary border-opacity-25">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-7">
+                        <div class="position-relative mb-4">
+                            <img src="assets/images/rag_arch.png" alt="RAG" class="img-fluid rounded-4 border border-secondary border-opacity-25 shadow-lg">
+                            <div class="security-scan-line"></div>
+                        </div>
+                        <div class="ai-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h6 class="mb-0 text-cyan">Retrieved Context Preview (Live)</h6>
+                                <span class="smaller text-muted font-monospace">Trace ID: #RAG-8829-X</span>
+                            </div>
+                            <div class="bg-theme-primary p-3 rounded border border-secondary small text-muted font-monospace mb-4">
+                                [CONTEXT] [DOC_ID_422] "The Q4 revenue growth was driven by high-margin neural licensing..." [RELEVANCE: 0.982]
+                            </div>
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-between mb-1 smaller text-muted text-uppercase tracking-tighter">
+                                        <span>Similarity Score</span>
+                                        <span class="text-cyan">98.2%</span>
+                                    </div>
+                                    <div class="progress bg-secondary" style="height: 4px;">
+                                        <div class="progress-bar bg-cyan" style="width: 98%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-between mb-1 smaller text-muted text-uppercase tracking-tighter">
+                                        <span>Retrieval Latency</span>
+                                        <span class="text-cyan">12.4ms</span>
+                                    </div>
+                                    <div class="progress bg-secondary" style="height: 4px;">
+                                        <div class="progress-bar bg-cyan" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4">
+                                <h6 class="smaller text-muted text-uppercase mb-3">Similarity Distribution</h6>
+                                <div class="d-flex gap-1" style="height: 30px; align-items: flex-end;">
+                                    <div class="bg-cyan flex-fill" style="height: 90%;"></div>
+                                    <div class="bg-cyan flex-fill" style="height: 70%; opacity: 0.6;"></div>
+                                    <div class="bg-cyan flex-fill" style="height: 40%; opacity: 0.4;"></div>
+                                    <div class="bg-cyan flex-fill" style="height: 20%; opacity: 0.2;"></div>
+                                    <div class="bg-cyan flex-fill" style="height: 10%; opacity: 0.1;"></div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="badge bg-secondary bg-opacity-25 text-muted smaller">Source: financial_q4.pdf</span>
+                                <button class="btn btn-link btn-sm text-cyan text-decoration-none smaller">Open Source File <i class="bi bi-box-arrow-up-right ms-1"></i></button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="ai-card h-100">
-                            <h5>Retrieval Config</h5>
-                            <div class="mb-4 mt-3">
+                    <div class="col-lg-5">
+                        <div class="ai-card">
+                            <h5 class="mb-4">Retrieval Pipeline Configuration</h5>
+                            <div class="mb-4 mt-4">
                                 <label class="form-label small text-muted">Vector Database Provider</label>
                                 <select class="form-select bg-dark border-secondary text-white">
-                                    <option>Pinecone (Serverless)</option>
-                                    <option>Milvus</option>
-                                    <option>Weaviate</option>
+                                    <option>Pinecone (Serverless Cluster)</option>
+                                    <option>Milvus Distributed</option>
+                                    <option>Weaviate Enterprise</option>
                                 </select>
                             </div>
                             <div class="mb-4">
-                                <label class="form-label small text-muted">Chunk Size</label>
-                                <input type="range" class="form-range" min="256" max="2048" step="128">
-                                <div class="d-flex justify-content-between small text-muted">
-                                    <span>256</span>
-                                    <span>2048</span>
-                                </div>
+                                <label class="form-label small text-muted">Embedding Model</label>
+                                <select class="form-select bg-dark border-secondary text-white">
+                                    <option>text-embedding-3-large</option>
+                                    <option>voyage-2-multilingual</option>
+                                </select>
                             </div>
-                            <button class="btn btn-primary w-100">Re-index Pipeline</button>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">Reranking Strategy</label>
+                                <select class="form-select bg-dark border-secondary text-white">
+                                    <option>Cohere Rerank v3</option>
+                                    <option>BGE-Reranker-Large</option>
+                                    <option>Disabled</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <label class="form-label small text-muted">Chunk Size (Tokens)</label>
+                                    <span class="small text-cyan" id="chunk-val">512</span>
+                                </div>
+                                <input type="range" class="form-range" min="128" max="2048" step="128" value="512">
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <label class="form-label small text-muted">Overlap Percentage</label>
+                                    <span class="small text-cyan">15%</span>
+                                </div>
+                                <input type="range" class="form-range" min="0" max="50" step="5" value="15">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">Hallucination Guard</label>
+                                <select class="form-select bg-theme-primary border-secondary text-theme-primary">
+                                    <option>DeepCheck Active</option>
+                                    <option>Standard Verification</option>
+                                    <option>Fast Path (Unfiltered)</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label small">Hybrid Search (Vector + BM25)</label>
+                            </div>
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label small">Metadata Auto-Filtering</label>
+                            </div>
+                            <button class="btn btn-primary w-100 py-3 mt-4">Update Retrieval Engine</button>
                         </div>
                     </div>
                 </div>
@@ -281,16 +538,92 @@
 
             <!-- 6. Deployment -->
             <div id="deployment" class="dashboard-section" style="display: none;">
-                <div class="ai-card mb-4">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="mb-0">Active API Keys</h5>
-                        <button class="btn btn-outline-cyan btn-sm">+ Create New Key</button>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="ai-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="mb-0">Global Deployment Clusters</h5>
+                                <span class="badge bg-success-subtle text-success">Healthy</span>
+                            </div>
+                            <img src="assets/images/global_network.png" alt="Deployment" class="img-fluid rounded-4 mb-4 opacity-75">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr class="smaller text-muted">
+                                            <th>Region</th>
+                                            <th>Latency</th>
+                                            <th>Traffic</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>us-east-1</td>
+                                            <td>12ms</td>
+                                            <td>42%</td>
+                                            <td><div class="bg-success rounded-circle" style="width: 8px; height: 8px;"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>eu-west-1</td>
+                                            <td>45ms</td>
+                                            <td>28%</td>
+                                            <td><div class="bg-success rounded-circle" style="width: 8px; height: 8px;"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ap-south-1</td>
+                                            <td>110ms</td>
+                                            <td>30%</td>
+                                            <td><div class="bg-warning rounded-circle" style="width: 8px; height: 8px;"></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-dark p-3 rounded-3 border border-secondary mb-3 d-flex justify-content-between align-items-center">
-                        <code class="text-cyan">sk_live_...4a8d</code>
-                        <div>
-                            <button class="btn btn-link btn-sm text-muted"><i class="bi bi-copy"></i></button>
-                            <button class="btn btn-link btn-sm text-danger"><i class="bi bi-trash"></i></button>
+                    <div class="col-lg-4">
+                        <div class="ai-card h-100 d-flex flex-column">
+                            <h5 class="mb-4">API & Access Control</h5>
+                            <div class="bg-theme-primary p-3 rounded-4 border border-secondary border-opacity-25 mb-4">
+                                <label class="smaller text-muted d-block mb-2">Primary Production Key</label>
+                                <div class="d-flex align-items-center">
+                                    <code class="text-cyan flex-fill">sk_live_...9f22</code>
+                                    <button class="btn btn-link text-muted"><i class="bi bi-copy"></i></button>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="small text-muted mb-2">Environment</label>
+                                <div class="btn-group w-100">
+                                    <button class="btn btn-outline-secondary btn-sm active">Production</button>
+                                    <button class="btn btn-outline-secondary btn-sm">Staging</button>
+                                    <button class="btn btn-outline-secondary btn-sm">Dev</button>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <label class="small text-muted">Rate Limiting (RPM)</label>
+                                    <span class="small text-cyan">5,000</span>
+                                </div>
+                                <input type="range" class="form-range" min="100" max="10000" step="100" value="5000">
+                            </div>
+                            <div class="mb-4">
+                                <label class="small text-muted mb-2">IP Whitelist</label>
+                                <textarea class="form-control bg-dark border-secondary text-white smaller" rows="2" placeholder="Enter IP addresses (one per line)..."></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-1 smaller">
+                                    <span class="text-muted">Monthly Token Quota</span>
+                                    <span class="text-white">82%</span>
+                                </div>
+                                <div class="progress bg-dark" style="height: 6px;">
+                                    <div class="progress-bar bg-warning" style="width: 82%;"></div>
+                                </div>
+                                <p class="smaller text-muted mt-2 mb-0">8.2M / 10M tokens used</p>
+                            </div>
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label small text-muted">Force TLS 1.3 Encryption</label>
+                            </div>
+                            <button class="btn btn-primary w-100 py-3 mt-auto">+ New Webhook</button>
                         </div>
                     </div>
                 </div>
@@ -300,40 +633,93 @@
             <div id="downloads" class="dashboard-section" style="display: none;">
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="ai-card text-center">
-                            <i class="bi bi-file-earmark-zip fs-2 text-cyan mb-3"></i>
-                            <h6>Model-Weights-v2.zip</h6>
-                            <p class="small text-muted">4.2 GB</p>
-                            <button class="btn btn-outline-cyan btn-sm w-100">Download</button>
+                        <div class="ai-card h-100 text-center">
+                            <i class="bi bi-file-earmark-zip fs-1 text-cyan mb-3"></i>
+                            <h5>Model-Weights-v2.zip</h5>
+                            <p class="small text-muted mb-4">Complete GGUF export for local edge deployment.</p>
+                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 4.2 GB • SHA256 Verified</div>
+                            <button class="btn btn-primary w-100">Download Weights</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ai-card h-100 text-center">
+                            <i class="bi bi-file-earmark-bar-graph fs-1 text-success mb-3"></i>
+                            <h5>Training_Log_Q4.csv</h5>
+                            <p class="small text-muted mb-4">Detailed loss metrics and hyperparameter logs.</p>
+                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 124 KB • Generated Oct 24</div>
+                            <button class="btn btn-outline-cyan w-100">Export CSV</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ai-card h-100 text-center">
+                            <i class="bi bi-shield-lock-fill fs-1 text-warning mb-3"></i>
+                            <h5>Compliance_Report.pdf</h5>
+                            <p class="small text-muted mb-4">Official SOC2 Type II compliance audit result.</p>
+                            <div class="bg-theme-primary p-2 rounded small text-muted mb-4">Size: 1.8 MB • Enterprise Only</div>
+                            <button class="btn btn-outline-cyan w-100">Request Access</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 8. Messages -->
-            <div id="messages" class="dashboard-section" style="display: none;">
-                <div class="ai-card p-0">
-                    <div class="row g-0">
-                        <div class="col-md-4 border-end border-secondary border-opacity-10">
-                            <div class="p-3 border-bottom border-secondary border-opacity-10 bg-secondary bg-opacity-25">
-                                <h6 class="mb-0">Recent Chats</h6>
+            <div id="messages" class="dashboard-section" style="display: none; height: 650px;">
+                <div class="ai-card p-0 h-100 overflow-hidden d-flex flex-column">
+                    <div class="row g-0 h-100 flex-grow-1">
+                        <!-- Sidebar -->
+                        <div class="col-md-4 border-end border-secondary border-opacity-10 d-flex flex-column h-100">
+                            <div class="p-4 border-bottom border-secondary border-opacity-10 bg-secondary bg-opacity-10">
+                                <h6 class="mb-0">Recent Conversations</h6>
                             </div>
-                            <div class="list-group list-group-flush bg-transparent">
-                                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-secondary border-opacity-10 p-3">
+                            <div class="list-group list-group-flush bg-transparent overflow-auto flex-grow-1">
+                                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-secondary border-opacity-10 p-4 active">
                                     <div class="d-flex align-items-center">
-                                        <div class="bg-cyan rounded-circle me-3" style="width: 40px; height: 40px;"></div>
+                                        <img src="https://ui-avatars.com/api/?name=Architect&background=06b6d4&color=fff" class="rounded-circle me-3" width="40">
                                         <div>
-                                            <h6 class="mb-0">Client A</h6>
-                                            <p class="small text-muted mb-0">Model optimization query</p>
+                                            <h6 class="mb-0">System Architect</h6>
+                                            <p class="smaller text-muted mb-0">Model optimization complete...</p>
                                         </div>
+                                        <span class="smaller text-cyan ms-auto">2m</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-secondary border-opacity-10 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Security&background=ec4899&color=fff" class="rounded-circle me-3" width="40">
+                                        <div>
+                                            <h6 class="mb-0">Security Bot</h6>
+                                            <p class="smaller text-muted mb-0">Credential rotation reminder</p>
+                                        </div>
+                                        <span class="smaller text-muted ms-auto">4h</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="p-5 text-center text-muted">
-                                <i class="bi bi-chat-dots fs-1 mb-3"></i>
-                                <p>Select a conversation to start messaging</p>
+                        <!-- Chat Area -->
+                        <div class="col-md-8 d-flex flex-column h-100">
+                            <div class="p-4 border-bottom border-secondary border-opacity-10 d-flex align-items-center bg-secondary bg-opacity-10">
+                                <h6 class="mb-0">System Architect</h6>
+                                <span class="badge bg-success ms-2 p-1 rounded-circle" style="width: 8px; height: 8px;"></span>
+                                <div class="ms-auto d-flex gap-2">
+                                    <button class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-telephone"></i></button>
+                                    <button class="btn btn-dark btn-sm rounded-circle"><i class="bi bi-three-dots-vertical"></i></button>
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow-1 overflow-auto">
+                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4" style="max-width: 80% ;">
+                                    <p class="small mb-0">Hello Admin, the Llama-3-Sales-Agent fine-tuning is showing promising results at Epoch 12. Should we proceed with the current learning rate?</p>
+                                </div>
+                                <div class="bg-cyan bg-opacity-10 p-3 rounded-4 mb-4 ms-auto" style="max-width: 80% ;">
+                                    <p class="small mb-0">Yes, keep it at 5e-5. We need to prioritize stability over speed for this deployment.</p>
+                                </div>
+                                <div class="bg-secondary bg-opacity-10 p-3 rounded-4 mb-4" style="max-width: 80% ;">
+                                    <p class="small mb-0">Understood. I will also monitor the gradient clipping to ensure no sudden spikes in the next epoch.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 border-top border-secondary border-opacity-10 bg-theme-primary">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-theme-primary border-secondary text-theme-primary" placeholder="Type a message...">
+                                    <button class="btn btn-primary px-4"><i class="bi bi-send"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -342,23 +728,55 @@
 
             <!-- 9. Settings -->
             <div id="settings" class="dashboard-section" style="display: none;">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row g-4">
+                    <div class="col-lg-6">
                         <div class="ai-card">
-                            <h5 class="mb-4">General Settings</h5>
-                            <div class="mb-3">
-                                <label class="form-label">Default Model</label>
-                                <select class="form-select bg-dark border-secondary text-white">
-                                    <option>GPT-4o (OpenAI)</option>
-                                    <option>Llama 3.1 (Meta)</option>
-                                    <option>Claude 3.5 (Anthropic)</option>
+                            <h5 class="mb-4">Workspace Preferences</h5>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">Default Model Engine</label>
+                                <select class="form-select bg-theme-primary border-secondary text-theme-primary">
+                                    <option>GPT-4o (Production)</option>
+                                    <option>Llama 3.1 70B (Private Cloud)</option>
                                 </select>
                             </div>
-                            <div class="form-check form-switch mb-3">
+                            <div class="form-check form-switch mb-4">
                                 <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label">Automatic Training Logs</label>
+                                <label class="form-check-label small">Real-time Latency Monitoring</label>
                             </div>
-                            <button class="btn btn-primary">Save Changes</button>
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label small">Auto-Scale GPU Clusters</label>
+                            </div>
+                            <hr class="border-secondary opacity-10 my-4">
+                            <h5 class="mb-4">Billing & Plan</h5>
+                            <div class="p-3 bg-secondary bg-opacity-10 rounded-4 mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small text-muted">Current Plan:</span>
+                                    <span class="small fw-bold">Enterprise Pro</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="small text-muted">Next Invoice:</span>
+                                    <span class="small fw-bold">Nov 15, 2026 ($1,999)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">Manage Subscription</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ai-card">
+                            <h5 class="mb-4">Security & Access</h5>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">Two-Factor Authentication</label>
+                                <div class="d-flex gap-2">
+                                    <input type="text" class="form-control bg-dark border-secondary text-white" value="+1 (555) ••• ••88" readonly>
+                                    <button class="btn btn-outline-cyan">Update</button>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small text-muted">API Request IP Whitelist</label>
+                                <textarea class="form-control bg-dark border-secondary text-white" rows="3" placeholder="192.168.1.1, 10.0.0.1"></textarea>
+                            </div>
+                            <button class="btn btn-outline-danger w-100 mt-4">Reset Workstation Credentials</button>
                         </div>
                     </div>
                 </div>

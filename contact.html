@@ -9,7 +9,7 @@
 </head>
 <body data-theme="dark">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i class="bi bi-cpu-fill me-2 text-cyan"></i>
@@ -45,7 +45,7 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="py-5 bg-dark border-bottom border-secondary border-opacity-25">
+    <section class="py-5 bg-theme-secondary border-bottom border-secondary border-opacity-25">
         <div class="container py-4 text-center">
             <h1 class="display-3 fw-bold mb-3 animate-on-scroll">Let's Build <span class="text-cyan">Intelligence</span></h1>
             <p class="lead text-muted mx-auto animate-on-scroll" style="max-width: 700px;">Ready to deploy a custom LLM solution? Our architects are standing by to help you design the perfect AI pipeline.</p>
@@ -56,52 +56,189 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <div class="d-flex mb-4">
+                    <div class="d-flex contact-info-item mb-4">
                         <i class="bi bi-geo-alt text-cyan fs-4 me-3"></i>
                         <div><h6>Global Headquarters</h6><p class="text-muted small">San Francisco, CA (Remote First)</p></div>
                     </div>
-                    <div class="d-flex mb-4">
+                    <div class="d-flex contact-info-item mb-4">
                         <i class="bi bi-envelope text-cyan fs-4 me-3"></i>
                         <div><h6>Email Inquiries</h6><p class="text-muted small">architect@neuralcore.ai</p></div>
                     </div>
+                    <div class="d-flex contact-info-item mb-4">
+                        <i class="bi bi-telephone text-cyan fs-4 me-3"></i>
+                        <div><h6>Priority Hotline</h6><p class="text-muted small">+1 (888) NEURAL-AI</p></div>
+                    </div>
+                    <div class="d-flex contact-info-item mb-5">
+                        <i class="bi bi-clock-history text-cyan fs-4 me-3"></i>
+                        <div><h6>Operational Hours</h6><p class="text-muted small">24/7 Global Neural Monitoring</p></div>
+                    </div>
+
+                    <hr class="border-secondary opacity-25 mb-5">
+
+                    <h6 class="mb-4 text-uppercase small tracking-widest text-cyan">Connect With Us</h6>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <a href="#" class="ai-card p-3 d-flex align-items-center text-decoration-none group">
+                                <i class="bi bi-github fs-5 me-2 text-cyan"></i>
+                                <span class="small text-muted">Open Source</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="ai-card p-3 d-flex align-items-center text-decoration-none">
+                                <i class="bi bi-linkedin fs-5 me-2 text-cyan"></i>
+                                <span class="small text-muted">Neural Network</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="ai-card p-3 d-flex align-items-center text-decoration-none">
+                                <i class="bi bi-discord fs-5 me-2 text-cyan"></i>
+                                <span class="small text-muted">Dev Community</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="ai-card p-3 d-flex align-items-center text-decoration-none">
+                                <i class="bi bi-twitter-x fs-5 me-2 text-cyan"></i>
+                                <span class="small text-muted">Intelligence Feed</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-7">
-                    <div class="ai-card">
-                        <form class="needs-validation" novalidate>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small">Full Name</label>
-                                    <input type="text" class="form-control bg-dark border-secondary text-white" required>
+                    <div class="ai-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <form class="needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small">Full Name</label>
+                                        <input type="text" class="form-control bg-theme-primary border-secondary" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small">Company Email</label>
+                                        <input type="email" class="form-control bg-theme-primary border-secondary" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small">AI Solution of Interest</label>
+                                        <select class="form-select bg-theme-primary border-secondary">
+                                            <option>Custom GPT Development</option>
+                                            <option>Model Fine-Tuning</option>
+                                            <option>RAG Implementation</option>
+                                            <option>AI Security Audit</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small">Message</label>
+                                        <textarea class="form-control bg-theme-primary border-secondary" rows="5" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Submit Consultation Request</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small">Company Email</label>
-                                    <input type="email" class="form-control bg-dark border-secondary text-white" required>
+                            </form>
+                        </div>
+                        
+                        <!-- Consultation Benefits (Fills the visual void) -->
+                        <div class="mt-5 pt-5 border-top border-secondary border-opacity-25">
+                            <h6 class="text-cyan small mb-4 text-uppercase tracking-widest">Consultation Perks</h6>
+                            <div class="row g-4">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-shield-lock text-cyan me-2"></i>
+                                        <span class="small text-muted">NDA Protected Sessions</span>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label small">AI Solution of Interest</label>
-                                    <select class="form-select bg-dark border-secondary text-white">
-                                        <option>Custom GPT Development</option>
-                                        <option>Model Fine-Tuning</option>
-                                        <option>RAG Implementation</option>
-                                        <option>AI Security Audit</option>
-                                    </select>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-lightning-charge text-cyan me-2"></i>
+                                        <span class="small text-muted">Same-Day Architect Review</span>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label small">Message</label>
-                                    <textarea class="form-control bg-dark border-secondary text-white" rows="5" required></textarea>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-graph-up-arrow text-cyan me-2"></i>
+                                        <span class="small text-muted">Custom ROI Roadmap</span>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100" type="submit">Submit Consultation Request</button>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-layers text-cyan me-2"></i>
+                                        <span class="small text-muted">Full Stack AI Blueprint</span>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-5"><div class="container text-center text-muted small"><p>&copy; 2026 NeuralCore AI</p></div></footer>
+    <!-- Google Map Section -->
+    <section class="py-0 animate-on-scroll">
+        <div class="container-fluid p-0 overflow-hidden">
+            <div class="ai-card border-0 rounded-0 m-0 p-0" style="height: 450px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.01923456789!2d-122.3999999!3d37.774929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807f4a1329a7%3A0x6b2e3532c25608d0!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; opacity: 1;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="#">
+                        <i class="bi bi-cpu-fill me-2 text-cyan"></i>
+                        <span>NEURAL<span class="text-cyan">CORE</span></span>
+                    </a>
+                    <p class="text-muted">Architecting the future of enterprise intelligence through custom LLMs and advanced orchestration.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Custom GPTs</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Fine-Tuning</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">RAG Systems</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">AI Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="portfolio.html" class="text-muted text-decoration-none">Portfolio</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">AI Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-muted">Stay updated with the latest in AI orchestration.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-theme-primary border-secondary" placeholder="Email address">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 opacity-10">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 NeuralCore AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
