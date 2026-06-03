@@ -1321,3 +1321,76 @@ p, .lead, .text-muted, .subheading, .small, .smaller {
     box-shadow: 0 4px 15px var(--ai-glow) !important;
 }
 
+/* --- Overrides & RTL/Layout Fixes (appended) --- */
+
+/* Constrain some image heights site-wide for better visual balance */
+.economics-img {
+    max-height: 420px !important;
+    height: auto !important;
+    object-fit: cover;
+    width: 100% !important;
+}
+
+.align-height-row .img-col img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto !important;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Messages RTL spacing fixes */
+[dir="rtl"] .list-group-item .me-3 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+[dir="rtl"] .list-group-item .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+/* Footer RTL: remove unintended right-side gaps on list sections */
+[dir="rtl"] footer ul {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+[dir="rtl"] footer ul li {
+    text-align: right !important;
+}
+
+/* RTL toggle spacing & header adjustments to avoid clashing with search */
+#rtl-toggle {
+    margin-inline: 0.4rem;
+}
+[dir="rtl"] #rtl-toggle {
+    margin-inline: 0.4rem;
+}
+
+/* Dashboard header: minor padding tweaks for RTL on small screens */
+[dir="rtl"] .dashboard-header {
+    padding-right: 2rem;
+}
+@media (max-width: 767px) {
+    [dir="rtl"] .dashboard-header {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+/* Ensure navbar toggler is visible on narrow screens */
+.navbar-toggler {
+    z-index: 2050;
+}
+.navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+
