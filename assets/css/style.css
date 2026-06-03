@@ -54,6 +54,27 @@ body {
     line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-weight: 600 !important;
+}
+
+.display-5 {
+    font-size: clamp(2.2rem, 3vw, 3rem) !important;
+}
+
+.text-theme-primary {
+    color: var(--text-primary) !important;
+}
+
+.ai-card img,
+.hero-image-wrapper img,
+img.img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .text-muted {
     color: var(--text-muted) !important;
 }
@@ -773,6 +794,37 @@ body:not(.sidebar-active) {
 .btn-outline-cyan:hover {
     background: var(--ai-cyan);
     color: white;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+[dir="rtl"] .notification-item {
+    direction: rtl;
+}
+
+[dir="rtl"] .notification-item .flex-grow-1 {
+    text-align: right;
+}
+
+[dir="rtl"] .notification-icon-box {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}
+
+[dir="rtl"] .badge.ms-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .list-group-item .me-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
 }
 
 /* Auth Pages Extra */
