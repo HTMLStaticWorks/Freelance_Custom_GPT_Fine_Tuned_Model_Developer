@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         rtlToggle.addEventListener('click', () => {
             const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
             document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
-            rtlToggle.textContent = isRTL ? 'RTL' : 'LTR';
         });
     }
 
